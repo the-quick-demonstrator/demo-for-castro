@@ -5,7 +5,6 @@ import com.github.curriculeon.arcade.lib.game.cardgame.utils.Deck;
 import com.github.curriculeon.arcade.lib.game.cardgame.utils.card.CardInterface;
 import com.github.curriculeon.arcade.lib.profile.Profile;
 import com.github.curriculeon.arcade.lib.profile.ProfileInterface;
-import com.github.curriculeon.arcade.lib.profile.ProfileManager;
 import com.github.curriculeon.arcade.lib.utils.Pair;
 
 /**
@@ -15,15 +14,8 @@ public class HighLowGame extends AbstractCardGame<HighLowPlayer> {
     private Pair<HighLowPlayer, CardInterface> highestScoringPlayerAndCard;
 
     @Override
-    public void createPlayers() {
-        int numberOfPlayers = 2;
-        for (int i = 0; i < numberOfPlayers; i++) {
-            String infoMessage = "Player number [ %s ], enter your profile id.";
-            Long playerId = getConsole().getLongInput(infoMessage, i);
-            ProfileInterface profile = ProfileManager.INSTANCE.getProfileById(playerId);
-            HighLowPlayer highLowPlayer = new HighLowPlayer(profile);
-            addPlayer(highLowPlayer);
-        }
+    public HighLowPlayer createPlayer(ProfileInterface profile) {
+        return new HighLowPlayer(profile);
     }
 
     @Override
@@ -41,11 +33,8 @@ public class HighLowGame extends AbstractCardGame<HighLowPlayer> {
 
     public void evaluateCardAndPlayer(Pair<HighLowPlayer, CardInterface> ownerAndCard) {
         if (highestScoringPlayerAndCard != null) {
-            Integer highestScoringPlayerCardValue = highestScoringPlayerAndCard
-                    .getValue()
-                    .getValue();
-
-            Integer currentPlayerCardValue = getCurrentFaceUpValue().getValue();
+            final int currentPlayerCardValue = getCurrentFaceUpValue().getValue();
+            final int highestScoringPlayerCardValue = highestScoringPlayerAndCard.getValue().getValue();
 
             if (highestScoringPlayerCardValue < currentPlayerCardValue) {
                 highestScoringPlayerAndCard = new Pair<>(ownerAndCard.getKey(), getCurrentFaceUpValue());
@@ -55,7 +44,7 @@ public class HighLowGame extends AbstractCardGame<HighLowPlayer> {
         }
     }
 
-    public Pair<HighLowPlayer, CardInterface>  getHighestScoringPlayerAndCard() {
+    public Pair<HighLowPlayer, CardInterface> getHighestScoringPlayerAndCard() {
         return highestScoringPlayerAndCard;
     }
 }

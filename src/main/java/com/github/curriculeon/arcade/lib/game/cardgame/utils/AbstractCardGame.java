@@ -1,6 +1,10 @@
 package com.github.curriculeon.arcade.lib.game.cardgame.utils;
 
+import com.github.curriculeon.arcade.lib.game.PlayerInterface;
 import com.github.curriculeon.arcade.lib.game.cardgame.CardGamePlayerInterface;
+import com.github.curriculeon.arcade.lib.profile.ProfileInterface;
+import com.github.curriculeon.arcade.lib.profile.ProfileManager;
+import com.github.curriculeon.arcade.service.blackjack.BlackJackPlayer;
 
 import java.util.ArrayList;
 import java.util.List;

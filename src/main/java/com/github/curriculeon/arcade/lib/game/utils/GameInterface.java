@@ -1,6 +1,9 @@
 package com.github.curriculeon.arcade.lib.game.utils;
 
 import com.github.curriculeon.arcade.lib.game.PlayerInterface;
+import com.github.curriculeon.arcade.lib.profile.Profile;
+import com.github.curriculeon.arcade.lib.profile.ProfileInterface;
+import com.github.curriculeon.arcade.lib.profile.ProfileManager;
 import com.github.curriculeon.arcade.lib.utils.InputOutputSocketInterface;
 
 import java.util.List;
@@ -13,9 +16,18 @@ public interface GameInterface<PlayerType extends PlayerInterface> extends Runna
     List<PlayerType> getPlayers();
 
     void run();
+    PlayerType createPlayer(ProfileInterface profile);
 
-    void createPlayers();
-
+    default void createPlayers() {
+        final Integer numberOfPlayers = getConsole().getIntegerInput("How many players will be playing?");
+        for (int i = 0; i < numberOfPlayers; i++) {
+            final String infoMessage = "Player number [ %s ], enter your profile id.";
+            final Long playerId = getConsole().getLongInput(infoMessage, i);
+            final ProfileInterface profile = ProfileManager.INSTANCE.getProfileById(playerId);
+            final PlayerType player = createPlayer(profile);
+            addPlayer(player);
+        }
+    }
 
     default void addPlayer(PlayerType player) {
         getConsole().println("Adding player [ %s ] to game", player.getName());
