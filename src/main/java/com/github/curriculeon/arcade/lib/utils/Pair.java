@@ -1,6 +1,7 @@
 package com.github.curriculeon.arcade.lib.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 /**
  * Created by leon on 6/25/2020.
@@ -30,13 +31,12 @@ public class Pair<KeyType, ValueType> {
     public void setValue(ValueType value) {
         this.value = value;
     }
-
     @Override
     public String toString() {
         try {
             return new ObjectMapper().writeValueAsString(this);
         } catch(Throwable t) {
-            return "Pair{" + "key=" + key + ", value=" + value + '}';
+            return new Gson().toJson(this, getClass());
         }
     }
 }

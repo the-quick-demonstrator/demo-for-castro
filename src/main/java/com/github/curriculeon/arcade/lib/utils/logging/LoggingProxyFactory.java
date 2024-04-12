@@ -46,12 +46,12 @@ public class LoggingProxyFactory<T> {
 
             //Measure method execution time
             String name = method.getName();
-            getConsole().println(String.format("Attempting to invoke `%s.%s(%s)`...", target.getClass().getSimpleName(), name, arguments));
+            getConsole(AnsiColor.GREEN).println(String.format("Attempting to invoke `%s.%s(%s)`...", target.getClass().getSimpleName(), name, arguments));
             stopWatch.start();
             try {
                 result = method.invoke(target, args);
                 final long elapsedTime = stopWatch.getTime();
-                getConsole().println(String.format("`%s.%s(%s)` resulted in `%s` :: executed in %s ms", target.getClass().getSimpleName(), name, arguments, result, elapsedTime));
+                getConsole(AnsiColor.CYAN).println(String.format("`%s.%s(%s)` resulted in `%s` :: executed in %s ms", target.getClass().getSimpleName(), name, arguments, result, elapsedTime));
                 return result;
             } catch (Throwable t) {
                 throw t;

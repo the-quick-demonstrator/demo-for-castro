@@ -8,4 +8,7 @@ public interface InputOutputSocketInterface {
     default InputOutputConsoleInterface getConsole() {
         return new InputOutputConsole();
     }
+    default InputOutputConsoleInterface getConsole(AnsiColor ansiColor) {
+        return new InputOutputConsole(ansiColor);
+    }
 }

@@ -11,14 +11,29 @@ public class InputOutputConsole implements InputOutputConsoleInterface {
     public static final InputOutputConsoleInterface IO_CONSOLE = new InputOutputConsole();
     private final Scanner input;
     private final PrintStream output;
-
-    public InputOutputConsole(Scanner input, PrintStream output) {
-        this.input = input;
-        this.output = output;
-    }
+    private final AnsiColor ansiColor;
 
     public InputOutputConsole() {
-        this(new Scanner(System.in), System.out);
+        this(AnsiColor.AUTO);
+    }
+
+    public InputOutputConsole(AnsiColor ansiColor) {
+        this(new Scanner(System.in), System.out, ansiColor);
+    }
+
+    public InputOutputConsole(Scanner input, PrintStream output) {
+        this(input, output, AnsiColor.AUTO);
+    }
+
+    public InputOutputConsole(Scanner input, PrintStream output, AnsiColor ansiColor) {
+        this.input = input;
+        this.output=output;
+        this.ansiColor = ansiColor;
+    }
+
+    @Override
+    public AnsiColor getAnsiColor() {
+        return ansiColor;
     }
 
     @Override

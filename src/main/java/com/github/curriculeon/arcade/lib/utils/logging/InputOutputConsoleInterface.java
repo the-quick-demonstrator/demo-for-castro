@@ -13,8 +13,12 @@ public interface InputOutputConsoleInterface {
 
     Scanner getScanner();
 
+    default AnsiColor getAnsiColor() {
+        return AnsiColor.AUTO;
+    }
+
     default void print(String val, Object... args) {
-        getPrintStream().format(val, args);
+        getPrintStream().format(getAnsiColor().getColor().concat(val), args);
     }
 
 

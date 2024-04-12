@@ -1,8 +1,10 @@
 package com.github.curriculeon.arcade.service.highlow;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.curriculeon.arcade.lib.game.cardgame.AbstractCardGamePlayer;
 import com.github.curriculeon.arcade.lib.game.cardgame.utils.card.CardInterface;
 import com.github.curriculeon.arcade.lib.profile.ProfileInterface;
+import com.google.gson.Gson;
 
 /**
  * Created by leon on 6/24/2020.
@@ -46,5 +48,14 @@ public class HighLowPlayer extends AbstractCardGamePlayer {
 
     public CardInterface getCard() {
         return getHand().get(0);
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return new ObjectMapper().writeValueAsString(this);
+        } catch(Throwable t) {
+            return new Gson().toJson(this, getClass());
+        }
     }
 }
