@@ -1,5 +1,7 @@
 package com.github.curriculeon.arcade.lib.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 /**
  * Created by leon on 6/25/2020.
  * @ATTENTION_TO_STUDENTS - You are advised against modifying this class
@@ -27,6 +29,15 @@ public class Pair<KeyType, ValueType> {
 
     public void setValue(ValueType value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return new ObjectMapper().writeValueAsString(this);
+        } catch(Throwable t) {
+            return "Pair{" + "key=" + key + ", value=" + value + '}';
+        }
     }
 }
 

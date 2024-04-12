@@ -1,6 +1,6 @@
 package com.github.curriculeon.arcade.lib.profile;
 
-import com.github.curriculeon.arcade.lib.utils.InputOutputSocketInterface;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterface;
 
 import java.util.List;
 import java.util.function.Predicate;

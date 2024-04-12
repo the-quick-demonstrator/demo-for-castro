@@ -1,10 +1,9 @@
 package com.github.curriculeon.arcade.lib.game.utils;
 
 import com.github.curriculeon.arcade.lib.game.PlayerInterface;
-import com.github.curriculeon.arcade.lib.profile.Profile;
 import com.github.curriculeon.arcade.lib.profile.ProfileInterface;
 import com.github.curriculeon.arcade.lib.profile.ProfileManager;
-import com.github.curriculeon.arcade.lib.utils.InputOutputSocketInterface;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterface;
 
 import java.util.List;
 
@@ -38,7 +37,6 @@ public interface GameInterface<PlayerType extends PlayerInterface> extends Runna
     default void removePlayer(PlayerType player) {
         getPlayers().add(player);
     }
-
 
     default Boolean contains(PlayerType player) {
         return getPlayers().contains(player);

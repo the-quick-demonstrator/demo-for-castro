@@ -4,7 +4,7 @@ package com.github.curriculeon.arcade.service.utils;
 import com.github.curriculeon.arcade.lib.game.utils.GameEngineInterface;
 import com.github.curriculeon.arcade.service.blackjack.BlackJackGameEngine;
 import com.github.curriculeon.arcade.service.highlow.HighLowGameEngine;
-import com.github.curriculeon.arcade.lib.utils.DecisionInterface;
+import com.github.curriculeon.arcade.lib.utils.decision.DecisionInterface;
 
 import java.util.function.Supplier;
 

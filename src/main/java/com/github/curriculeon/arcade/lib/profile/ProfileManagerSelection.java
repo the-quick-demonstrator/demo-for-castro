@@ -1,8 +1,8 @@
 package com.github.curriculeon.arcade.lib.profile;
 
 import com.github.curriculeon.arcade.lib.ArcadeInterface;
-import com.github.curriculeon.arcade.lib.utils.DecisionInterface;
-import com.github.curriculeon.arcade.lib.utils.InputOutputConsole;
+import com.github.curriculeon.arcade.lib.utils.decision.DecisionInterface;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputConsole;
 
 import java.util.function.Consumer;
 

@@ -1,14 +1,15 @@
-package com.github.curriculeon.arcade.lib.utils;
+package com.github.curriculeon.arcade.lib.utils.decision;
 
-import com.github.curriculeon.arcade.lib.utils.InputOutputSocketInterface;
 import com.github.curriculeon.arcade.lib.utils.StringUtils;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterface;
 
 /**
  * Created by leon on 6/25/2020.
  * @ATTENTION_TO_STUDENTS - You are advised against modifying this class
  */
-public interface MenuInterface
-        <SomeDecision extends Enum<SomeDecision> & DecisionInterface> extends InputOutputSocketInterface {
+public interface DecisionMenuInterface
+        <SomeDecision extends Enum<SomeDecision> & DecisionInterface>
+        extends InputOutputSocketInterface {
 
     SomeDecision[] getDecisions();
 

@@ -4,7 +4,7 @@ import com.github.curriculeon.arcade.lib.game.utils.GameDecisionInterface;
 
 import java.util.function.BiConsumer;
 
-import static com.github.curriculeon.arcade.lib.utils.InputOutputConsole.IO_CONSOLE;
+import static com.github.curriculeon.arcade.lib.utils.logging.InputOutputConsole.IO_CONSOLE;
 
 public enum BlackJackGameDecision implements GameDecisionInterface<BlackJackGame, BlackJackPlayer>  {
     VIEW_DISCARD_PILE((game, player) -> {

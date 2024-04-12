@@ -6,7 +6,7 @@ import com.github.curriculeon.arcade.lib.game.utils.GameInterface;
 public interface CardGameInterface<
         CardGamePlayerType extends CardGamePlayerInterface>
         extends GameInterface<CardGamePlayerType> {
-    DiscardPile getDiscardPile();
+    DiscardPile<CardGamePlayerType> getDiscardPile();
 
     Deck getDeck();
 }

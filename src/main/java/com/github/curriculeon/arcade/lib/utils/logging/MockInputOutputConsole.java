@@ -1,4 +1,4 @@
-package com.github.curriculeon.arcade.lib.utils;
+package com.github.curriculeon.arcade.lib.utils.logging;
 
 import java.io.ByteArrayInputStream;
 import java.io.PrintStream;

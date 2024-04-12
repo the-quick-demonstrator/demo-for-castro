@@ -1,4 +1,4 @@
-package com.github.curriculeon.arcade.lib.utils;
+package com.github.curriculeon.arcade.lib.utils.logging;
 
 /**
  * Created by leon on 6/25/2020.

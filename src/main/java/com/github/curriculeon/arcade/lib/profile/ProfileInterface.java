@@ -1,6 +1,6 @@
 package com.github.curriculeon.arcade.lib.profile;
 
-import com.github.curriculeon.arcade.lib.utils.InputOutputSocketInterface;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterface;
 
 /**
  * Created by leon on 6/25/2020.

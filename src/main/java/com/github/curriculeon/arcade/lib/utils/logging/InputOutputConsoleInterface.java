@@ -1,4 +1,4 @@
-package com.github.curriculeon.arcade.lib.utils;
+package com.github.curriculeon.arcade.lib.utils.logging;
 
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -8,7 +8,6 @@ import java.util.Scanner;
  * @ATTENTION_TO_STUDENTS - You are advised against modifying this class
  */
 public interface InputOutputConsoleInterface {
-    void setScanner(Scanner scanner);
 
     PrintStream getPrintStream();
 

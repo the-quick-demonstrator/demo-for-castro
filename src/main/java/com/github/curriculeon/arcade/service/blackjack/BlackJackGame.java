@@ -4,6 +4,7 @@ import com.github.curriculeon.arcade.lib.game.cardgame.utils.AbstractCardGame;
 import com.github.curriculeon.arcade.lib.game.cardgame.utils.card.CardInterface;
 import com.github.curriculeon.arcade.lib.profile.ProfileInterface;
 import com.github.curriculeon.arcade.lib.profile.ProfileManager;
+import com.github.curriculeon.arcade.lib.utils.logging.LoggingProxyFactory;
 import com.github.curriculeon.arcade.service.highlow.HighLowPlayer;
 
 import java.util.Collections;

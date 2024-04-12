@@ -4,7 +4,7 @@ import com.github.curriculeon.arcade.lib.ArcadeInterface;
 import com.github.curriculeon.arcade.lib.profile.Profile;
 import com.github.curriculeon.arcade.lib.profile.ProfileManager;
 import com.github.curriculeon.arcade.lib.profile.ProfileManagerInterface;
-import com.github.curriculeon.arcade.lib.utils.AbstractDecisionMenu;
+import com.github.curriculeon.arcade.lib.utils.decision.AbstractDecisionMenu;
 
 /**
  * Created by leon on 6/25/2020.

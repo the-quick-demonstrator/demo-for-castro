@@ -1,5 +1,6 @@
 package com.github.curriculeon.arcade.lib.game.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.curriculeon.arcade.lib.game.PlayerInterface;
 
 /**
@@ -20,5 +21,15 @@ public abstract class AbstractGameEngine<
     @Override
     public GameType getGame() {
         return game;
+    }
+
+
+    @Override
+    public String toString() {
+        try {
+            return new ObjectMapper().writeValueAsString(this);
+        } catch (Throwable t) {
+            return "AbstractGameEngine{" + "game=" + game + '}';
+        }
     }
 }

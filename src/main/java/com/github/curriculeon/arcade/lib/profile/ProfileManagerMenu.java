@@ -1,6 +1,6 @@
 package com.github.curriculeon.arcade.lib.profile;
 
-import com.github.curriculeon.arcade.lib.utils.AbstractDecisionMenu;
+import com.github.curriculeon.arcade.lib.utils.decision.AbstractDecisionMenu;
 
 /**
  * Created by leon on 2/25/2018.

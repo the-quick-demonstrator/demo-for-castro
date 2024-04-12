@@ -131,7 +131,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="com.github.curriculeon.arcade.lib.utils.AbstractDecisionMenu"
+  <class id="13" language="java" name="com.github.curriculeon.arcade.lib.utils.decision.AbstractDecisionMenu"
     project="maven.scalable-arcade" 
     file="/maven.scalable-arcade/src/main/java/com/github/curriculeon/arcade/utils/AbstractDecisionMenu.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -142,7 +142,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="14" language="java" name="com.github.curriculeon.arcade.lib.utils.MenuInterface"
+  <interface id="14" language="java" name="com.github.curriculeon.arcade.lib.utils.decision.DecisionMenuInterface"
     project="maven.scalable-arcade" 
     file="/maven.scalable-arcade/src/main/java/com/github/curriculeon/arcade/utils/MenuInterface.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -153,7 +153,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="15" language="java" name="com.github.curriculeon.arcade.lib.utils.DecisionInterface"
+  <interface id="15" language="java" name="com.github.curriculeon.arcade.lib.utils.decision.DecisionInterface"
     project="maven.scalable-arcade" 
     file="/maven.scalable-arcade/src/main/java/com/github/curriculeon/arcade/utils/DecisionInterface.java" 
     binary="false" corner="BOTTOM_RIGHT">    

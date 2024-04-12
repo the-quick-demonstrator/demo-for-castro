@@ -1,4 +1,4 @@
-package com.github.curriculeon.arcade.lib.utils;
+package com.github.curriculeon.arcade.lib.utils.decision;
 
 import java.util.Arrays;
 import java.util.StringJoiner;
@@ -9,7 +9,7 @@ import java.util.StringJoiner;
  */
 public abstract class AbstractDecisionMenu
         <SomeDecision extends Enum<SomeDecision> & DecisionInterface>
-        implements MenuInterface<SomeDecision> {
+        implements DecisionMenuInterface<SomeDecision> {
 
     private final SomeDecision[] decisions;
 
@@ -25,7 +25,7 @@ public abstract class AbstractDecisionMenu
     @Override
     public String toString() {
         return new StringJoiner("\n")
-                .add(String.format("Welcome to the %s !", getClass().getSimpleName()))
+                .add(String.format("Welcome to the %s menu!", getClass().getSimpleName()))
                 .add("From here you can select any of the following options:")
                 .add(Arrays.toString(decisions))
                 .toString();

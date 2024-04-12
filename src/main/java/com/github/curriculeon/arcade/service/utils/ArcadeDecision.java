@@ -1,10 +1,9 @@
 package com.github.curriculeon.arcade.service.utils;
 
 import com.github.curriculeon.arcade.lib.ArcadeInterface;
-import com.github.curriculeon.arcade.lib.profile.ProfileManagerMenu;
 import com.github.curriculeon.arcade.lib.profile.ProfileManagerSelection;
-import com.github.curriculeon.arcade.lib.utils.DecisionInterface;
-import com.github.curriculeon.arcade.lib.utils.DecisionMenu;
+import com.github.curriculeon.arcade.lib.utils.decision.DecisionInterface;
+import com.github.curriculeon.arcade.lib.utils.decision.DecisionMenu;
 
 import java.util.function.Consumer;
 

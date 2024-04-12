@@ -3,7 +3,7 @@ package com.github.curriculeon.arcade.service.highlow;
 import com.github.curriculeon.arcade.lib.game.cardgame.utils.DiscardPile;
 import com.github.curriculeon.arcade.lib.game.cardgame.utils.card.CardInterface;
 import com.github.curriculeon.arcade.lib.game.utils.GameDecisionInterface;
-import com.github.curriculeon.arcade.lib.utils.InputOutputConsoleInterface;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputConsoleInterface;
 import com.github.curriculeon.arcade.lib.utils.Pair;
 
 import java.util.function.BiConsumer;
@@ -11,7 +11,7 @@ import java.util.function.BiConsumer;
 /**
  * Created by leon on 6/24/2020.
  */
-public enum HighLowGameDecision implements GameDecisionInterface<HighLowGame, HighLowPlayer> {
+public enum HighLowGameDecision implements GameDecisionInterface<HighLowGameInterface, HighLowPlayer> {
     VIEW_HAND((game, player) -> {
         game.getConsole().println(player.getHand().toString());
     }),
@@ -84,14 +84,14 @@ public enum HighLowGameDecision implements GameDecisionInterface<HighLowGame, Hi
         }
     });
 
-    private final BiConsumer<HighLowGame, HighLowPlayer> operation;
+    private final BiConsumer<HighLowGameInterface, HighLowPlayer> operation;
 
-    HighLowGameDecision(final BiConsumer<HighLowGame, HighLowPlayer> operation) {
+    HighLowGameDecision(final BiConsumer<HighLowGameInterface, HighLowPlayer> operation) {
         this.operation = operation;
     }
 
     @Override
-    public BiConsumer<HighLowGame, HighLowPlayer> getProcedure() {
+    public BiConsumer<HighLowGameInterface, HighLowPlayer> getProcedure() {
         return operation;
     }
 }
