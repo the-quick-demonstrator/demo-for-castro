@@ -1,5 +1,7 @@
 package com.github.curriculeon.arcade.lib.profile;
 
+import com.github.curriculeon.arcade.lib.utils.logging.AnsiColor;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputConsoleInterface;
 import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterface;
 
 import java.util.List;
@@ -13,6 +15,13 @@ public interface ProfileManagerInterface extends InputOutputSocketInterface {
     List<ProfileInterface> getProfiles();
 
     void setProfiles(List<ProfileInterface> profileList);
+
+
+    @Override
+    default InputOutputConsoleInterface getConsole() {
+        return InputOutputSocketInterface.super.getConsole(AnsiColor.PURPLE);
+    }
+
 
     /**
      * @return array of respective profile objects

@@ -46,7 +46,7 @@ public class LoggingProxyFactory<T> {
 
             //Measure method execution time
             String name = method.getName();
-            getConsole(AnsiColor.GREEN).println(String.format("Attempting to invoke `%s.%s(%s)`...", target.getClass().getSimpleName(), name, arguments));
+            getConsole(AnsiColor.YELLOW).println(String.format("Attempting to invoke `%s.%s(%s)`...", target.getClass().getSimpleName(), name, arguments));
             stopWatch.start();
             try {
                 result = method.invoke(target, args);

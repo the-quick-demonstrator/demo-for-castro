@@ -1,5 +1,7 @@
 package com.github.curriculeon.arcade.lib.profile;
 
+import com.github.curriculeon.arcade.lib.utils.logging.AnsiColor;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputConsoleInterface;
 import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterface;
 
 /**
@@ -7,6 +9,11 @@ import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterfac
  * @ATTENTION_TO_STUDENTS - You are advised against modifying this class
  */
 public interface ProfileInterface extends InputOutputSocketInterface {
+    @Override
+    default InputOutputConsoleInterface getConsole() {
+        return InputOutputSocketInterface.super.getConsole(AnsiColor.GREEN);
+    }
+
 
     default void printInformation() {
         getConsole().println("Printing profile details");

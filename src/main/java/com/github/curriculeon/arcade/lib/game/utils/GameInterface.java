@@ -3,6 +3,8 @@ package com.github.curriculeon.arcade.lib.game.utils;
 import com.github.curriculeon.arcade.lib.game.PlayerInterface;
 import com.github.curriculeon.arcade.lib.profile.ProfileInterface;
 import com.github.curriculeon.arcade.lib.profile.ProfileManager;
+import com.github.curriculeon.arcade.lib.utils.logging.AnsiColor;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputConsoleInterface;
 import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterface;
 
 import java.util.List;
@@ -15,6 +17,12 @@ public interface GameInterface<PlayerType extends PlayerInterface> extends Runna
     List<PlayerType> getPlayers();
 
     void run();
+
+    @Override
+    default InputOutputConsoleInterface getConsole() {
+        return InputOutputSocketInterface.super.getConsole(AnsiColor.BLUE);
+    }
+
     PlayerType createPlayer(ProfileInterface profile);
 
     default void createPlayers() {

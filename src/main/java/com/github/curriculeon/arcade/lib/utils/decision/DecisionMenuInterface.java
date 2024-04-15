@@ -1,6 +1,9 @@
 package com.github.curriculeon.arcade.lib.utils.decision;
 
 import com.github.curriculeon.arcade.lib.utils.StringUtils;
+import com.github.curriculeon.arcade.lib.utils.logging.AnsiColor;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputConsole;
+import com.github.curriculeon.arcade.lib.utils.logging.InputOutputConsoleInterface;
 import com.github.curriculeon.arcade.lib.utils.logging.InputOutputSocketInterface;
 
 /**
@@ -12,6 +15,11 @@ public interface DecisionMenuInterface
         extends InputOutputSocketInterface {
 
     SomeDecision[] getDecisions();
+
+    @Override
+    default InputOutputConsoleInterface getConsole() {
+        return InputOutputSocketInterface.super.getConsole(AnsiColor.CYAN);
+    }
 
     default SomeDecision getInput() {
         String userInput = null;
