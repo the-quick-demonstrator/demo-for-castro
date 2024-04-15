@@ -25,7 +25,7 @@ public class Card implements CardInterface {
     }
 
     public int getValue() {
-        return rank.getValue();
+        return rank.getPrimaryValue();
     }
 
     public String toString() {
